@@ -1,0 +1,94 @@
+body {
+  font-family: "Roboto Slab", serif;
+  background-image: linear-gradient(to top, #d1cff3 0%, #897fe8 100%);
+}
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  color: rgb(0, 0, 179);
+
+  font-size: 60px;
+}
+
+h2 {
+  color: rgb(50, 16, 82);
+  margin-top: 40px;
+  font-size: 40px;
+  text-align: center;
+}
+h3 {
+  margin-top: 40px;
+}
+form {
+  text-align: center;
+}
+ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  font-weight: bolder;
+}
+img {
+  width: 70px;
+}
+button {
+  background-color: rgb(63, 255, 76);
+  padding: 5px 10px;
+}
+.author {
+  text-align: center;
+  margin-top: 90px;
+}
+button,
+.submit,
+.search {
+  border-radius: 20px;
+  border: 1px solid rgb(121, 91, 51);
+  font-size: 25px;
+  font-weight: 700;
+  color: rgb(121, 91, 51);
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.submit {
+  background-color: rgb(219, 185, 251);
+  padding: 5px 13px;
+}
+.search {
+  padding-left: 10px;
+}
+
+.today-temp {
+  font-size: 70px;
+  margin-bottom: 30px;
+}
+.other-days {
+  color: rgb(46, 45, 126);
+
+  font-size: 30px;
+}
+
+.today-day,
+.location {
+  font-size: 40px;
+}
+.otherday-temp {
+  font-size: 50px;
+}
+.other-day {
+  font-size: 25px;
+}
+.location {
+  margin-top: 20px;
+}
+.material-icons {
+  font-size: 70px;
+  color: #0c3d87;
+}
+.humidityGeneral,
+.windGeneral {
+  font-size: 20px;
+}
+.windGeneral {
+  margin-bottom: 30px;
+}
