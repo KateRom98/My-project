@@ -86,7 +86,7 @@ function showActual(event) {
     let apiKey = "203fa770242fcd2b9555d832a88ea567";
     let apiUrlTemp = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(apiUrlTemp).then(showTemp);
-    let apiUrlGeo = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    let apiUrlGeo = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${apiKey}`;
     axios.get(apiUrlGeo).then(showGeo);
   }
 
