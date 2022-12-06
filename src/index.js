@@ -65,9 +65,9 @@ function showActual(event) {
   event.preventDefault();
   function showPosition(position) {
     function showGeo(response) {
-      let cityName = response.data[0].name;
-      let location = document.querySelector(".location");
-      location.innerHTML = `🌐${cityName}`;
+      document.querySelector(
+        ".location"
+      ).innerHTML = `🌐 ${response.data[0].name}`;
     }
     function showTemp(response) {
       let actualInfo = Math.round(response.data.main.temp);
