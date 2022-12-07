@@ -40,7 +40,8 @@ function enterCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemp);
 }
-
+displayTemp(`London`);
+alert(`Halo`);
 let search = document.querySelector("form");
 search.addEventListener("submit", enterCity);
 
