@@ -25,25 +25,41 @@ function enterCity(event) {
   event.preventDefault();
   let city = document.querySelector(".search");
   document.querySelector(".location").innerHTML = `🌐 ${city.value}`;
-  function displayTemp(response) {
-    let currentTemp = document.querySelector(".tempActual");
-    currentTemp.innerHTML = Math.round(response.data.main.temp);
-    let tempValue = Math.round(response.data.main.temp);
-    if (tempValue > 0) {
-      currentTemp.innerHTML = `+${tempValue}`;
-    }
-    document.querySelector(".humidity").innerHTML = response.data.main.humidity;
-    document.querySelector(".wind").innerHTML = response.data.wind.speed;
-  }
-  let cityName = city.value;
   let apiKey = "203fa770242fcd2b9555d832a88ea567";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemp);
 }
-displayTemp(`London`);
-alert(`Halo`);
+
+function displayTemp(response) {
+  document.querySelector(".tempActual").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  let tempValue = Math.round(response.data.main.temp);
+  if (tempValue > 0) {
+    document.querySelector(".tempActual").innerHTML = `+${tempValue}`;
+  }
+  document.querySelector(".humidity").innerHTML = response.data.main.humidity;
+  document.querySelector(".wind").innerHTML = response.data.wind.speed;
+}
+
 let search = document.querySelector("form");
 search.addEventListener("submit", enterCity);
+
+function displayTempLondon(response) {
+  document.querySelector(".tempActual").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  let tempValue = Math.round(response.data.main.temp);
+  if (tempValue > 0) {
+    document.querySelector(".tempActual").innerHTML = `+${tempValue}`;
+  }
+  document.querySelector(".humidity").innerHTML = response.data.main.humidity;
+  document.querySelector(".wind").innerHTML = response.data.wind.speed;
+}
+document.querySelector(".location").innerHTML = `🌐 London`;
+let apiKeyStandard = "203fa770242fcd2b9555d832a88ea567";
+let apiUrlStandard = `https://api.openweathermap.org/data/2.5/weather?q=london&appid=${apiKeyStandard}&units=metric`;
+axios.get(apiUrlStandard).then(displayTempLondon);
 
 function showCelsius(event) {
   event.preventDefault();
