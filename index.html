@@ -26,100 +26,104 @@
   </head>
   <body>
     <div class="container">
-      <h1>Online weather forecast 🌡</h1>
-      <form>
-        <input
-          type="search"
-          class="search"
-          placeholder="🔍 Enter a city"
-          autofocus
-        />
-        <input type="submit" class="submit" value="Search" />
-        <button>Current</button>
-      </form>
+      <div class="Weather">
+        <h1>Weather forecast🌡</h1>
+        <form>
+          <input
+            type="search"
+            class="search"
+            placeholder="🔍 Enter a city..."
+            autofocus
+          />
+          <input type="submit" class="submit" value="Search" />
+          <button>Current</button>
+        </form>
 
-      <h2>
-        <ul>
-          <li class="today-temp">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="sun"
-            />
-            <span class="tempActual"></span>
-            <a href="" class="linkCelsius" style="text-decoration: none">°C</a
-            ><span class="material-icons">swap_horiz</span
-            ><a href="" class="linkFarenheit" style="text-decoration: none"
-              >°F</a
+        <h2>
+          <ul>
+            <li class="today-temp">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="sun"
+              />
+              <span class="tempActual"></span>
+              <a href="" class="linkCelsius" style="text-decoration: none">°C</a
+              ><span class="material-icons">swap_horiz</span
+              ><a href="" class="linkFarenheit" style="text-decoration: none"
+                >°F</a
+              >
+            </li>
+            <li class="humidityGeneral">
+              Humidity: <span class="humidity"></span> %
+            </li>
+            <li class="windGeneral">Wind: <span class="wind"></span> km/h</li>
+            <li class="today-day"></li>
+            <li class="location"></li>
+          </ul>
+        </h2>
+        <h3>
+          <span class="other-days">
+            <div class="row">
+              <div class="col-3">
+                <ul>
+                  <li class="other-day">Mon</li>
+                  <li class="otherday-temp">
+                    +16°C
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      alt="sun"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <li class="other-day">Tue</li>
+                  <li class="otherday-temp">
+                    +14°C
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      alt="sun"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <li class="other-day">Wed</li>
+                  <li class="otherday-temp">
+                    +15°C
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      alt="sun"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <li class="other-day">Thu</li>
+                  <li class="otherday-temp">
+                    +13°C
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png"
+                      alt="rain"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </h3>
+        <footer>
+          <p class="author">
+            <a href="https://github.com/KateRom98/My-project" target="_blank"
+              >Open-source code</a
             >
-          </li>
-          <li class="humidityGeneral">
-            Humidity: <span class="humidity"></span> %
-          </li>
-          <li class="windGeneral">Wind: <span class="wind"></span> km/h</li>
-          <li class="today-day">📆</li>
-          <li class="location">🌐</li>
-        </ul>
-      </h2>
-      <h3>
-        <span class="other-days">
-          <div class="row">
-            <div class="col-3">
-              <ul>
-                <li class="other-day">📆 Fri /11/ November</li>
-                <li class="otherday-temp">
-                  +16°C
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    alt="sun"
-                  />
-                </li>
-              </ul>
-            </div>
-            <div class="col-3">
-              <ul>
-                <li class="other-day">📆 Sat /12/ November</li>
-                <li class="otherday-temp">
-                  +14°C
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    alt="sun"
-                  />
-                </li>
-              </ul>
-            </div>
-            <div class="col-3">
-              <ul>
-                <li class="other-day">📆 Sun /13/ November</li>
-                <li class="otherday-temp">
-                  +15°C
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    alt="sun"
-                  />
-                </li>
-              </ul>
-            </div>
-            <div class="col-3">
-              <ul>
-                <li class="other-day">📆 Mon /14/ November</li>
-                <li class="otherday-temp">
-                  +13°C
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png"
-                    alt="rain"
-                  />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </span>
-      </h3>
-      <p class="author">
-        <a href="https://github.com/KateRom98/My-project" target="_blank"
-          >Open-source code</a
-        >
-        by Kateryna Dibtsova
-      </p>
+            by Kateryna Dibtsova
+          </p>
+        </footer>
+      </div>
     </div>
     <script src="src/index.js"></script>
   </body>
