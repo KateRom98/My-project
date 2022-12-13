@@ -9,7 +9,7 @@ h1 {
 
 h2 {
   color: rgb(50, 16, 82);
-  margin-top: 40px;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -33,11 +33,12 @@ button {
   padding: 5px 10px;
 }
 .Weather {
-  border-radius: 16px;
+  border-radius: 10px;
   box-shadow: 10px 10px 10px 10px rgb(88, 151, 172);
-  padding: 40px;
   background-image: linear-gradient(to top, #dcdbee 0%, #897fe8 100%);
-  margin: 30px 300px 0px 300px;
+  margin: 30px auto;
+  padding: 30px;
+  max-width: 550px;
 }
 
 button,
