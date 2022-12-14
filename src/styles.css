@@ -71,8 +71,9 @@ button,
   color: rgb(46, 45, 126);
   font-size: 10px;
 }
-
-.today-day,
+.updated {
+  font-size: 15px;
+}
 .location {
   font-size: 30px;
 }
@@ -86,10 +87,17 @@ button,
   font-size: 40px;
   color: #0c3d87;
 }
+
 .humidityGeneral,
-.windGeneral {
+.windGeneral,
+.weatherDescription {
   font-size: 15px;
 }
+
+.weatherDescription:first-letter {
+  text-transform: capitalize;
+}
+
 .windGeneral {
   margin-bottom: 20px;
 }
