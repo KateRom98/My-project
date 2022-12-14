@@ -65,7 +65,7 @@ button,
 
 .today-temp {
   font-size: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .other-days {
   color: rgb(46, 45, 126);
@@ -73,9 +73,13 @@ button,
 }
 .updated {
   font-size: 15px;
+  color: rgb(179, 49, 49);
 }
 .location {
   font-size: 30px;
+  position: relative;
+  top: 8px;
+  right: -20px;
 }
 .otherday-temp {
   font-size: 25px;
@@ -92,6 +96,7 @@ button,
 .windGeneral,
 .weatherDescription {
   font-size: 15px;
+  margin-top: 10px;
 }
 
 .weatherDescription:first-letter {

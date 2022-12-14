@@ -41,19 +41,29 @@
 
         <h2>
           <ul>
-            <li class="today-temp">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="sun"
-              />
-              <span class="tempActual"></span>
-              <a href="#" class="linkCelsius" style="text-decoration: none"
-                >°C</a
-              ><span class="material-icons">swap_horiz</span
-              ><a href="#" class="linkFarenheit" style="text-decoration: none"
-                >°F</a
-              >
-            </li>
+            <div class="row">
+              <div class="col-5">
+                <li class="location"></li>
+              </div>
+              <div class="col-7">
+                <li class="today-temp">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    alt="sun"
+                  />
+                  <span class="tempActual"></span>
+                  <a href="#" class="linkCelsius" style="text-decoration: none"
+                    >°C</a
+                  ><span class="material-icons">swap_horiz</span
+                  ><a
+                    href="#"
+                    class="linkFarenheit"
+                    style="text-decoration: none"
+                    >°F</a
+                  >
+                </li>
+              </div>
+            </div>
             <li class="weatherDescription"></li>
             <li class="humidityGeneral">
               Humidity: <span class="humidity"></span> %
@@ -62,7 +72,6 @@
             <li class="updated">
               ⌚Last updated: <br /><span class="today-day"></span>
             </li>
-            <li class="location"></li>
           </ul>
         </h2>
         <h3>

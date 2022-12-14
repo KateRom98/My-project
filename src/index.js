@@ -36,7 +36,7 @@ function displayTemp(response) {
   document.querySelector(".today-day").innerHTML = formatDate(
     response.data.dt * 1000
   );
-  document.querySelector(".location").innerHTML = `🌐 ${response.data.name}`;
+  document.querySelector(".location").innerHTML = `🚩 ${response.data.name}`;
 }
 
 function search(city) {
