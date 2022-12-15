@@ -95,15 +95,29 @@ function showPosition(position) {
 }
 
 function showTemp(response) {
-  document.querySelector(".location").innerHTML = `🌐 ${response.data.name}`;
+  document.querySelector(".location").innerHTML = `🚩 ${response.data.name}`;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].description);
   let actualInfo = Math.round(response.data.main.temp);
   let tempActual = document.querySelector(".tempActual");
   tempActual.innerHTML = `${actualInfo}`;
   if (actualInfo > 0) {
     tempActual.innerHTML = `+ ${actualInfo}`;
   }
+  document.querySelector(".weatherDescription").innerHTML =
+    response.data.weather[0].description;
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
   document.querySelector(".wind").innerHTML = response.data.wind.speed;
+  document.querySelector(".today-day").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
 }
 
 document.querySelector("button").addEventListener("click", showActual);
