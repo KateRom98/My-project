@@ -22,6 +22,15 @@ function formatDate(timestamp) {
 }
 
 function displayTemp(response) {
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].description);
   document.querySelector(".tempActual").innerHTML = Math.round(
     response.data.main.temp
   );
