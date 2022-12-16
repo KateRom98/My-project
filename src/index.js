@@ -34,10 +34,8 @@ function displayTemp(response) {
   document.querySelector(".tempActual").innerHTML = Math.round(
     response.data.main.temp
   );
+  celsiusTemp = response.data.main.temp;
   let tempValue = Math.round(response.data.main.temp);
-  if (tempValue > 0) {
-    document.querySelector(".tempActual").innerHTML = `+${tempValue}`;
-  }
   document.querySelector(".weatherDescription").innerHTML =
     response.data.weather[0].description;
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
@@ -45,7 +43,7 @@ function displayTemp(response) {
   document.querySelector(".today-day").innerHTML = formatDate(
     response.data.dt * 1000
   );
-  document.querySelector(".location").innerHTML = `🚩 ${response.data.name}`;
+  document.querySelector(".location").innerHTML = response.data.name;
 }
 
 function search(city) {
@@ -62,24 +60,29 @@ function enterCity(event) {
 
 document.querySelector("form").addEventListener("submit", enterCity);
 
-search("London");
-
 function showCelsius(event) {
   event.preventDefault();
   let celsiusChange = document.querySelector(".tempActual");
-  celsiusChange.innerHTML = "";
+  farenheit.classList.remove("active");
+  celsius.classList.add("active");
+  celsiusChange.innerHTML = Math.round(celsiusTemp);
 }
 
 function showFarenheit(event) {
   event.preventDefault();
-  let farenheitChange = document.querySelector(".tempActual");
-  farenheitChange.innerHTML = "";
+  let farenheitChange = Math.round((celsiusTemp * 9) / 5 + 32);
+  let farenheitTemp = document.querySelector(".tempActual");
+  celsius.classList.remove("active");
+  farenheit.classList.add("active");
+  farenheitTemp.innerHTML = farenheitChange;
 }
 
 let celsius = document.querySelector(".linkCelsius");
 celsius.addEventListener("click", showCelsius);
 let farenheit = document.querySelector(".linkFarenheit");
 farenheit.addEventListener("click", showFarenheit);
+
+let celsiusTemp = null;
 
 function showActual(event) {
   event.preventDefault();
@@ -95,7 +98,7 @@ function showPosition(position) {
 }
 
 function showTemp(response) {
-  document.querySelector(".location").innerHTML = `🚩 ${response.data.name}`;
+  document.querySelector(".location").innerHTML = response.data.name;
   document
     .querySelector("#icon")
     .setAttribute(
@@ -108,9 +111,6 @@ function showTemp(response) {
   let actualInfo = Math.round(response.data.main.temp);
   let tempActual = document.querySelector(".tempActual");
   tempActual.innerHTML = `${actualInfo}`;
-  if (actualInfo > 0) {
-    tempActual.innerHTML = `+ ${actualInfo}`;
-  }
   document.querySelector(".weatherDescription").innerHTML =
     response.data.weather[0].description;
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
@@ -121,3 +121,5 @@ function showTemp(response) {
 }
 
 document.querySelector("button").addEventListener("click", showActual);
+
+search("London");

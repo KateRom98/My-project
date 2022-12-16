@@ -76,10 +76,10 @@ button,
   color: rgb(179, 49, 49);
 }
 .location {
-  font-size: 25px;
+  font-size: 30px;
   position: relative;
   top: 15px;
-  right: -20px;
+  right: -15px;
 }
 .otherday-temp {
   font-size: 25px;
@@ -96,7 +96,11 @@ button,
 .windGeneral,
 .weatherDescription {
   font-size: 15px;
-  margin-top: 10px;
+  margin-top: 8px;
+}
+
+.weatherDescription {
+  margin-top: 20px;
 }
 
 .weatherDescription:first-letter {
