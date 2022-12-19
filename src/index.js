@@ -84,42 +84,4 @@ farenheit.addEventListener("click", showFarenheit);
 
 let celsiusTemp = null;
 
-function showActual(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
-
-function showPosition(position) {
-  let lon = position.coords.longitude;
-  let lat = position.coords.latitude;
-  let apiKey = "203fa770242fcd2b9555d832a88ea567";
-  let apiUrlTemp = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrlTemp).then(showTemp);
-}
-
-function showTemp(response) {
-  document.querySelector(".location").innerHTML = response.data.name;
-  document
-    .querySelector("#icon")
-    .setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-  document
-    .querySelector("#icon")
-    .setAttribute("alt", response.data.weather[0].description);
-  let actualInfo = Math.round(response.data.main.temp);
-  let tempActual = document.querySelector(".tempActual");
-  tempActual.innerHTML = `${actualInfo}`;
-  document.querySelector(".weatherDescription").innerHTML =
-    response.data.weather[0].description;
-  document.querySelector(".humidity").innerHTML = response.data.main.humidity;
-  document.querySelector(".wind").innerHTML = response.data.wind.speed;
-  document.querySelector(".today-day").innerHTML = formatDate(
-    response.data.dt * 1000
-  );
-}
-
-document.querySelector("button").addEventListener("click", showActual);
-
 search("London");
