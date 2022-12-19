@@ -25,9 +25,6 @@ ul {
   padding: 0;
   font-weight: bolder;
 }
-img {
-  width: 70px;
-}
 .Weather {
   border-radius: 10px;
   box-shadow: 10px 10px 10px 10px rgb(88, 151, 172);
@@ -37,7 +34,6 @@ img {
   max-width: 550px;
 }
 
-button,
 .submit,
 .search {
   border-radius: 20px;
@@ -51,7 +47,6 @@ button,
   background-color: rgb(219, 185, 251);
   padding: 5px 13px;
 }
-button,
 .submit {
   box-shadow: 1px 3px 3px 3px rgb(113, 79, 194);
 }
@@ -63,7 +58,7 @@ button,
   font-size: 40px;
   margin-bottom: 5px;
 }
-.other-days {
+.other-days-forecast {
   color: rgb(46, 45, 126);
   font-size: 10px;
 }
@@ -77,12 +72,17 @@ button,
   top: 15px;
   right: -15px;
 }
-.otherday-temp {
-  font-size: 25px;
-}
 .other-day {
-  font-size: 15px;
+  font-size: 20px;
 }
+.otherday-temp-max {
+  font-size: 18px;
+}
+.other-day-temp-min {
+  font-size: 18px;
+  opacity: 0.6;
+}
+
 .material-icons {
   font-size: 40px;
   color: #0c3d87;
