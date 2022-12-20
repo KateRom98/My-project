@@ -21,6 +21,36 @@ function formatDate(timestamp) {
   return `${day} ${hour}:${minute}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let daysForecast = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  daysForecast.forEach(function (dayForecast) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col">
+                <ul>
+                  <li class="other-day">${dayForecast}</li>
+                  <li class="otherday-temperatures">
+                    <span class="otherday-temp-max">16°C /</span>
+                    <span class="other-day-temp-min">12°C</span>
+                  </li>
+                  <div class="image">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      alt=""
+                      width="50"
+                    />
+                  </div>
+                </ul>
+              </div>      
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemp(response) {
   document
     .querySelector("#icon")
@@ -85,3 +115,4 @@ farenheit.addEventListener("click", showFarenheit);
 let celsiusTemp = null;
 
 search("London");
+displayForecast();
