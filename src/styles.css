@@ -46,17 +46,18 @@ ul {
 .submit {
   background-color: rgb(219, 185, 251);
   padding: 5px 13px;
-}
-.submit {
   box-shadow: 1px 3px 3px 3px rgb(113, 79, 194);
 }
+
 .search {
   padding-left: 10px;
 }
 
 .today-temp {
   font-size: 40px;
-  margin-bottom: 5px;
+  position: relative;
+  left: -25px;
+  bottom: -6px;
 }
 .other-days-forecast {
   color: rgb(46, 45, 126);
@@ -70,7 +71,7 @@ ul {
   font-size: 30px;
   position: relative;
   top: 15px;
-  right: -15px;
+  right: -35px;
 }
 .other-day {
   font-size: 20px;
@@ -81,11 +82,6 @@ ul {
 .other-day-temp-min {
   font-size: 18px;
   opacity: 0.6;
-}
-
-.material-icons {
-  font-size: 40px;
-  color: #0c3d87;
 }
 
 .humidityGeneral,
@@ -111,4 +107,8 @@ ul {
   margin-bottom: 0px;
   margin-top: 50px;
   text-align: center;
+}
+#icon {
+  position: relative;
+  top: -10px;
 }

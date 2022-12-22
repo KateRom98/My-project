@@ -17,10 +17,6 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
   </head>
@@ -40,22 +36,16 @@
         <h2>
           <ul>
             <div class="row">
-              <div class="col-4">
+              <div class="col-5">
                 <li class="location"></li>
               </div>
-              <div class="col-8">
+              <div class="col-2">
+                <img src="" alt="" width="80" id="icon" />
+              </div>
+              <div class="col-5">
                 <li class="today-temp">
-                  <img src="" alt="" width="80" id="icon" />
                   <span class="tempActual"></span>
-                  <a href="#" class="linkCelsius" style="text-decoration: none"
-                    >°C</a
-                  ><span class="material-icons">swap_horiz</span
-                  ><a
-                    href="#"
-                    class="linkFarenheit"
-                    style="text-decoration: none"
-                    >°F</a
-                  >
+                  °C
                 </li>
               </div>
             </div>
@@ -63,7 +53,7 @@
             <li class="humidityGeneral">
               Humidity: <span class="humidity"></span> %
             </li>
-            <li class="windGeneral">Wind: <span class="wind"></span> km/h</li>
+            <li class="windGeneral">Wind: <span class="wind"></span> m/h</li>
             <li class="updated">
               ⌚Last updated: <br /><span class="today-day"></span>
             </li>

@@ -28,24 +28,36 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+function plusFunction(temperature) {
+  let tempForecast = document.querySelectorAll(
+    ".otherday-temp-max, .other-day-temp-min"
+  );
+  if (temperature > 0) {
+    tempForecast.innerText = `+${temperature}`;
+  } else {
+    tempForecast.innerText = `${temperature}`;
+  }
+  return tempForecast.innerText;
+}
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (dayForecast, index) {
-    if (index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
-              <div class="col-2">
+              <div class="col">
                 <ul>
                   <li class="other-day">${formatDay(dayForecast.dt)}</li>
                   <li class="otherday-temperatures">
-                    <span class="otherday-temp-max">${Math.round(
-                      dayForecast.temp.max
+                    <span class="otherday-temp-max">${plusFunction(
+                      Math.round(dayForecast.temp.max)
                     )}°C /</span>
-                    <span class="other-day-temp-min">${Math.round(
-                      dayForecast.temp.min
+                    <span class="other-day-temp-min">${plusFunction(
+                      Math.round(dayForecast.temp.min)
                     )}°C</span>
                   </li>
                   <div class="image">
@@ -83,10 +95,15 @@ function displayTemp(response) {
   );
   celsiusTemp = response.data.main.temp;
   let tempValue = Math.round(response.data.main.temp);
+  if (tempValue > 0) {
+    document.querySelector(".tempActual").innerHTML = `+ ${tempValue}`;
+  }
   document.querySelector(".weatherDescription").innerHTML =
     response.data.weather[0].description;
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
-  document.querySelector(".wind").innerHTML = response.data.wind.speed;
+  document.querySelector(".wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
   document.querySelector(".today-day").innerHTML = formatDate(
     response.data.dt * 1000
   );
@@ -106,28 +123,6 @@ function enterCity(event) {
 }
 
 document.querySelector("form").addEventListener("submit", enterCity);
-
-function showCelsius(event) {
-  event.preventDefault();
-  let celsiusChange = document.querySelector(".tempActual");
-  farenheit.classList.remove("active");
-  celsius.classList.add("active");
-  celsiusChange.innerHTML = Math.round(celsiusTemp);
-}
-
-function showFarenheit(event) {
-  event.preventDefault();
-  let farenheitChange = Math.round((celsiusTemp * 9) / 5 + 32);
-  let farenheitTemp = document.querySelector(".tempActual");
-  celsius.classList.remove("active");
-  farenheit.classList.add("active");
-  farenheitTemp.innerHTML = farenheitChange;
-}
-
-let celsius = document.querySelector(".linkCelsius");
-celsius.addEventListener("click", showCelsius);
-let farenheit = document.querySelector(".linkFarenheit");
-farenheit.addEventListener("click", showFarenheit);
 
 let celsiusTemp = null;
 
