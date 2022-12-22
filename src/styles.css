@@ -25,13 +25,20 @@ ul {
   padding: 0;
   font-weight: bolder;
 }
-.Weather {
+footer {
+  font-size: 13px;
+  margin-bottom: 0px;
+  margin-top: 50px;
+  text-align: center;
+}
+.weather {
   border-radius: 10px;
   box-shadow: 10px 10px 10px 10px rgb(88, 151, 172);
   background-image: linear-gradient(to top, #dcdbee 0%, #897fe8 100%);
   margin: 30px auto;
   padding: 30px;
   max-width: 550px;
+  padding-bottom: 0;
 }
 
 .submit,
@@ -102,12 +109,7 @@ ul {
 .windGeneral {
   margin-bottom: 20px;
 }
-.author {
-  font-size: 13px;
-  margin-bottom: 0px;
-  margin-top: 50px;
-  text-align: center;
-}
+
 #icon {
   position: relative;
   top: -10px;
