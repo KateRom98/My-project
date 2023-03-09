@@ -36,7 +36,7 @@ footer {
   box-shadow: 10px 10px 10px 10px rgb(88, 151, 172);
   background-image: linear-gradient(to top, #dcdbee 0%, #897fe8 100%);
   margin: 30px auto;
-  padding: 30px;
+  padding: 30px 10px;
   max-width: 550px;
   padding-bottom: 0;
 }
@@ -62,9 +62,6 @@ footer {
 
 .today-temp {
   font-size: 40px;
-  position: relative;
-  left: -25px;
-  bottom: -6px;
 }
 .other-days-forecast {
   color: rgb(46, 45, 126);
@@ -75,10 +72,7 @@ footer {
   color: rgb(179, 49, 49);
 }
 .location {
-  font-size: 30px;
-  position: relative;
-  top: 15px;
-  right: -35px;
+  font-size: 40px;
 }
 .other-day {
   font-size: 20px;
@@ -108,9 +102,4 @@ footer {
 
 .windGeneral {
   margin-bottom: 20px;
-}
-
-#icon {
-  position: relative;
-  top: -10px;
 }
